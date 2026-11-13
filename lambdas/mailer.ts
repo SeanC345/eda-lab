@@ -8,7 +8,7 @@ import {
 
 if (!SES_EMAIL_TO || !SES_EMAIL_FROM || !SES_REGION) {
   throw new Error(
-    "Please add the SES_EMAIL_TO, SES_EMAIL_FROM and SES_REGION constants to the env.ts file located in the root directory"
+    "Please add the SES_EMAIL_TO, SES_EMAIL_FROM and SES_REGION constants to the env.ts file located in the root directory",
   );
 }
 
@@ -18,7 +18,7 @@ type ContactDetails = {
   message: string;
 };
 
-const client = new SESClient({ region: SES_REGION});
+const client = new SESClient({ region: SES_REGION });
 
 export const handler: SQSHandler = async (event: any) => {
   console.log("Event ", JSON.stringify(event));
